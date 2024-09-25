@@ -59,7 +59,7 @@ app.get('/store/pokemon', async (req, res) => {
   try {// store image and convert to base64 
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${(pokemonName as string).toLowerCase()}`);
     const pokemonData = await response.json();
-    const pokemonImageResponse = await fetch(pokemonData.sprites.front_default);
+    const pokemonImageResponse = await fetch(pokemonData.sprites.front_shiny,);
     const imageData = await pokemonImageResponse.arrayBuffer();
     const imageBase64 = Buffer.from(imageData).toString('base64');
     //store sound data pokeapi -> base 64 -> wav 
@@ -197,7 +197,7 @@ app.get('/battle/Result', (req, res) => {
       <h3>${pkmn2.name.toUpperCase()} HP: ${pkmn2.hp}</h3>
       <p5>Attack: ${pkmn2.attack.toUpperCase()} Damage: ${pkmn2.power}</p5>
       <h2>${battleResult}</h2> 
-      <h4><pre><a href="/battle">Back to Battle</a>         <a href="/box2">Add more pokemon</a>          <a href="/box2">JSON Battle Output</a></pre></h4>
+      <h4><pre><a href="/battle">Back to Battle</a>         <a href="/store">Add more pokemon</a>          <a href="/box2">JSON Battle Output</a></pre></h4>
     `);
   
   
