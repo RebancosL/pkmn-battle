@@ -84,7 +84,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"tsc pokev2.ts && node pokev2.js"
+    "start":"tsc pokev2.2ts && node pokev2.2js"
   },
   "keywords": [],
   "author": "",
